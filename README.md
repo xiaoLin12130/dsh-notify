@@ -64,9 +64,10 @@ dsh plugin --profile desktop update dsh-notify
 
 更新后重启 DeepSeek Harness（宿主启动时才会加载新 bundle）。
 
-验证通知渲染是否正常（不依赖 DSH，直接弹三张示例卡片）：
+验证通知渲染是否正常（在**本地仓库目录**运行；安装后的包只带 `lib/` 与清单，不含 `test/`、`scripts/`）：
 
 ```powershell
+cd <clone 得到的目录>
 node scripts\visual-check.mjs
 ```
 

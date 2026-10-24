@@ -1,0 +1,55 @@
+{
+  "name": "dsh-notify",
+  "version": "0.1.0",
+  "description": "Desktop popups when a DeepSeek Harness session stops: turn completed, needs your input, or failed.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "author": "xiaoLin12130",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaoLin12130/dsh-notify.git"
+  },
+  "homepage": "https://github.com/xiaoLin12130/dsh-notify#readme",
+  "bugs": {
+    "url": "https://github.com/xiaoLin12130/dsh-notify/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "notification",
+    "desktop-notification",
+    "toast"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test",
+    "visual-check": "node scripts/visual-check.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ],
+      "platform": "web",
+      "immediately": true
+    }
+  }
+}
